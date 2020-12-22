@@ -37,7 +37,7 @@ class LoginPage extends StatelessWidget {
                           style: TextStyle(fontSize: 14.0, color: Colors.red)),
                       ),
                       Expanded(child: SizedBox()),
-                      createSubmitButton(),
+                      createSubmitButton(context),
                       SizedBox(height: 30.0),
                 ])
       
@@ -79,7 +79,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget createSubmitButton(){
+  Widget createSubmitButton(BuildContext context){
     return Container(
       width: double.infinity,
       height: 50.0,
@@ -94,7 +94,9 @@ class LoginPage extends StatelessWidget {
       ),
       child: RaisedButton(
         color: Color.fromRGBO(0, 93, 255, 1),
-        onPressed: () { print("Probando"); },
+        onPressed: () { 
+          Navigator.pushReplacementNamed(context, 'mesas');
+        },
         child: Text('INGRESAR', style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold, color: Colors.white)),
         shape: new RoundedRectangleBorder(
           borderRadius: new BorderRadius.circular(50.0),
