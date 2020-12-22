@@ -53,7 +53,7 @@ class MesasBloc{
 
   Stream<List<Mesa>> get mesasOcupadasStream async* {
     final List<Mesa> mesasOcupadas = [];
-
+    
     for(Mesa mesa in MESAS_OCUPADAS){
       //await Future.delayed(Duration(milliseconds: 300));
       mesasOcupadas.add(mesa);
